@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Controls Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .example {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 8px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+      cursor: pointer;
+    }
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      background: #eee;
+      margin-right: 5px;
+    }
+    .tab.active {
+      background: white;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-top: none;
+      background: white;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background: #e9ecef;
+    }
+  </style>
+</head>
+<body>
+  <h1>UI Controls Demonstration</h1>
+  <p>This page shows and describes 10 common types of UI controls with examples.</p>
+
+  <section id="radiobutton">
+    <h2>1. Radio Button</h2>
+    <p>Radio buttons allow the user to select <strong>only one option</strong> from a group.</p>
+    <div class="example">
+      <label><input type="radio" name="color" value="red"> Red</label>
+      <label><input type="radio" name="color" value="blue"> Blue</label>
+      <label><input type="radio" name="color" value="green"> Green</label>
+    </div>
+    <div class="example">
+      <label><input type="radio" name="size" value="s"> Small</label>
+      <label><input type="radio" name="size" value="m"> Medium</label>
+      <label><input type="radio" name="size" value="l"> Large</label>
+    </div>
+  </section>
+
+  <section id="checkbox">
+    <h2>2. Checkbox</h2>
+    <p>Checkboxes allow the user to select <strong>multiple options</strong> independently.</p>
+    <div class="example">
+      <label><input type="checkbox" /> HTML</label>
+      <label><input type="checkbox" /> CSS</label>
+      <label><input type="checkbox" /> JavaScript</label>
+    </div>
+    <div class="example">
+      <label><input type="checkbox" /> Receive newsletter</label>
+      <label><input type="checkbox" /> Accept terms</label>
+    </div>
+  </section>
+
+  <section id="textinput">
+    <h2>3. Text Input</h2>
+    <p>Used to enter text information such as name or email.</p>
+    <div class="example">
+      <input type="text" placeholder="Enter your name">
+    </div>
+    <div class="example">
+      <input type="email" placeholder="Enter your email">
+    </div>
+    <div class="example">
+      <input type="password" placeholder="Enter your password">
+    </div>
+  </section>
+
+  <section id="tabs">
+    <h2>4. Tabs</h2>
+    <p>Tabs allow the user to switch between different views or content panels.</p>
+    <div class="example">
+      <div class="tabs">
+        <div class="tab active" data-target="tab1">HTML</div>
+        <div class="tab" data-target="tab2">CSS</div>
+        <div class="tab" data-target="tab3">JS</div>
+      </div>
+      <div id="tab1" class="tab-content active">HTML stands for HyperText Markup Language.</div>
+      <div id="tab2" class="tab-content">CSS styles the appearance of web pages.</div>
+      <div id="tab3" class="tab-content">JavaScript adds interactivity to web pages.</div>
+    </div>
+  </section>
+
+  <section id="button">
+    <h2>5. Button</h2>
+    <p>Buttons trigger an action when clicked.</p>
+    <div class="example">
+      <button onclick="alert('You clicked me!')">Click Me</button>
+      <button disabled>Disabled Button</button>
+    </div>
+    <div class="example">
+      <button style="background: #28a745; color: white; border: none; padding: 8px 12px; border-radius: 5px;">Submit</button>
+      <button style="background: #dc3545; color: white; border: none; padding: 8px 12px; border-radius: 5px;">Cancel</button>
+    </div>
+  </section>
+
+  <section id="label">
+    <h2>6. Text Label</h2>
+    <p>Labels describe or identify other elements, like input fields.</p>
+    <div class="example">
+      <label for="username">Username:</label>
+      <input id="username" type="text">
+    </div>
+    <div class="example">
+      <label for="age">Age:</label>
+      <input id="age" type="number" min="1" max="120">
+    </div>
+  </section>
+
+  <section id="link">
+    <h2>7. Link</h2>
+    <p>Links navigate the user to another page or section.</p>
+    <div class="example">
+      <a href="https://www.google.com" target="_blank">Go to Google</a>
+    </div>
+    <div class="example">
+      <a href="#radiobutton">Jump to Radio Button section</a>
+    </div>
+  </section>
+
+  <section id="tooltip">
+    <h2>8. Tooltip</h2>
+    <p>Tooltips show helpful information when hovering over an element.</p>
+    <div class="example">
+      <div class="tooltip">Hover over me
+        <span class="tooltiptext">This is a tooltip message!</span>
+      </div>
+    </div>
+    <div class="example">
+      <div class="tooltip">Info
+        <span class="tooltiptext">Tooltips are great for hints!</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="dropdown">
+    <h2>9. Dropdown List</h2>
+    <p>Dropdown lists let the user select one value from a list of options.</p>
+    <div class="example">
+      <select>
+        <option>Choose a country</option>
+        <option>Ukraine</option>
+        <option>Poland</option>
+        <option>Germany</option>
+      </select>
+    </div>
+    <div class="example">
+      <select>
+        <option>Select fruit</option>
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Orange</option>
+      </select>
+    </div>
+  </section>
+
+  <section id="datagrid">
+    <h2>10. Data Grid (Table)</h2>
+    <p>A data grid displays data in tabular form, often sortable or searchable.</p>
+    <div class="example">
+      <table>
+        <tr><th>Name</th><th>Age</th><th>Country</th></tr>
+        <tr><td>John</td><td>25</td><td>USA</td></tr>
+        <tr><td>Olga</td><td>30</td><td>Ukraine</td></tr>
+        <tr><td>Mark</td><td>22</td><td>UK</td></tr>
+      </table>
+    </div>
+    <div class="example">
+      <table>
+        <tr><th>Product</th><th>Price</th><th>In Stock</th></tr>
+        <tr><td>Laptop</td><td>$800</td><td>Yes</td></tr>
+        <tr><td>Phone</td><td>$500</td><td>No</td></tr>
+        <tr><td>Tablet</td><td>$300</td><td>Yes</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    // Tabs functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
